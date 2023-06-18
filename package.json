@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx webpack --config webpack.config.js",
-    "deploy": "echo \"deploy\"; redis-cli -x TFUNCTION LOAD REPLACE < ./dist/main.js; echo \"deploy done\""
+    "deploy": "echo \"build\"; npm run build; echo \"deploy\"; redis-cli -x TFUNCTION LOAD REPLACE < ./dist/main.js; echo \"deploy done\""
   },
   "repository": {
     "type": "git",
